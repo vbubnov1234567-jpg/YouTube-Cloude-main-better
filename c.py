@@ -612,13 +612,13 @@ def main():
     # Читаем ключ из файла
     key = read_key_from_file()
     
-    if sys.argv[1] == "encode":
+    if sys.argv[1] in ["encode", "e"]:
         encoder = YouTubeEncoder(key)
         input_file = sys.argv[2]
         output = sys.argv[3] if len(sys.argv) > 3 else "output.mp4"
         encoder.encode(input_file, output)
         
-    elif sys.argv[1] == "decode":
+    elif sys.argv[1] in ["decode", "d"]:
         decoder = YouTubeDecoder(key)
         video_file = sys.argv[2]
         output_dir = sys.argv[3] if len(sys.argv) > 3 else "."
